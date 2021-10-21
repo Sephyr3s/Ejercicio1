@@ -1,32 +1,23 @@
 import React from 'react'
-import ButtonGroup from 'react-bootstrap/ButtonGroup'
-
-
-
-class Productitem extends React.Component{
-    constructor(props){
-     super(props);
-    }
-
-    render(){
-
-        return(
-
-            <div className="card">
-
-                <div className="Container h-25 d-inline-block border " >
+const Productitem = ({item}) => {  
+    return (
+        <div className="col-sm-4">
+        <div className="modal-dialog" role="document">
+            <div className="modal-content">
+                <div className="modal-header pb-0 border-0">
+                    <p>{item.nombre}</p>
                 </div>
-                <div className="card-body">
-                    <h4 className="card-title">{this.props.items.nombre}</h4>
-                    <p>${this.props.items.precio}</p>
-                    <ButtonGroup>            
-                    <button type="button" class="btn btn-default">Details</button>           
-                    <button type="button" class="btn btn-default">Add to cart</button>            
-                    </ButtonGroup>  
+                <div className="modal-body pt-0">
+                    <h2 className="modal-title">${item.precio}</h2>
+                </div>
+                <div className="modal-footer border-0">
+                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Details</button>
+                    <button type="button" className="btn btn-primary">Add to car</button>
                 </div>
             </div>
-        );
-    }
+        </div>
+        </div>
+    )
 }
-
 export default Productitem
+
