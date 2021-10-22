@@ -1,5 +1,6 @@
 # Ejercicio react N°1
-### Programacion Web
+### Reactjs+jsx+propiedades
+#### Programacion Web
 
 #### Universidad del Magdalena
 
