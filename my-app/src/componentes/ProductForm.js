@@ -30,8 +30,8 @@ export default function ItemForm(props){
                 <input type="text" name="nombre" className="form-control" id="ProductName" value={estadoForm.nombre} onChange={gestionarCamposForm}/>
             </div>
             <div className="mb-3">
-                <label htmlFor="$Precioo" className="form-label">precio</label>
-                <input type="text" name="Precio" className="form-control" id="Precioo" value={estadoForm.precio}  onChange={gestionarCamposForm}/>
+                <label htmlFor="Precio" className="form-label">precio</label>
+                <input type="text" name="precio" className="form-control" id="Precio" value={estadoForm.precio}  onChange={gestionarCamposForm}/>
             </div>
             <div className="mb-3">
                 <button type="submit" className="btn btn-primary">Agregar Producto</button>
