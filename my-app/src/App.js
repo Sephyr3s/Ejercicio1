@@ -13,9 +13,9 @@ function App() {
     <Route>
     <div className="Container -fluid">
       <Header/>
-        <div class="p-4 p-md-12 text-white rounded bg-dark text-center">
+        <div class="p-4 p-md-12 text-white rounded bg-dark   text-center">
           <div class="col-md-12 px-0">
-            <h2 class="display-4 fst-italic">Store</h2>
+            <h2 class="display-5 fst-italic">Store</h2>
           </div>
         </div>
       <Switch>
@@ -24,9 +24,7 @@ function App() {
         <Route path="/about" component={About} />
         <Route path="/cart" component={Cart} />
       </Switch>
-      
       <GridProduct/>
-
     </div>
     </Route>
   );
