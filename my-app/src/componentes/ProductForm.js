@@ -1,7 +1,10 @@
 import React,{useState} from "react";
 
 
+
+
 export default function ItemForm(props){
+
     const estadoIncialForm = {
         nombre:'',
         precio:''
@@ -29,10 +32,12 @@ export default function ItemForm(props){
                 <label htmlFor="ProductName" className="form-label">Nombre del producto</label>
                 <input type="text" name="nombre" className="form-control" id="ProductName" value={estadoForm.nombre} onChange={gestionarCamposForm}/>
             </div>
+
             <div className="mb-3">
                 <label htmlFor="Precio" className="form-label">precio</label>
                 <input type="text" name="precio" className="form-control" id="Precio" value={estadoForm.precio}  onChange={gestionarCamposForm}/>
             </div>
+            
             <div className="mb-3">
                 <button type="submit" className="btn btn-primary">Agregar Producto</button>
             </div>
