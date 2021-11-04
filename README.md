@@ -1,5 +1,5 @@
-# Ejercicio react N°1
-### Reactjs+jsx+propiedades
+# Ejercicio react N°2
+### Reactjs useReduce+Context API + useContext
 #### Programacion Web
 
 #### Universidad del Magdalena
