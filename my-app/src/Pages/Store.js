@@ -1,20 +1,19 @@
-import React from 'react'
-import GridProduct from '../componentes/GridProduct';
+import React from 'react';
 import Header from '../componentes/Header';
+import Products from '../componentes/Products';
 
-const Store=()=>{
-    return(
-        
-        <>
-            <Header />
-            <div className="row text-center pt-5">
-                <h1 style={{fontSize: 45}}>STORE</h1>
-                <p style={{fontSize: 20}} >This is the Store Page</p>
+const Store = () => {
+    return (
+        <>  <Header />
+            <div className="container">
+                <div className="row text-center" style={{ paddingTop: '4rem' }} >
+                 
+                    <p style={{fontSize: 20}} >Catalogo de productos </p>
+                </div>
+                <Products />
             </div>
-            <GridProduct />
         </>
-          
-    );
+    )
 }
 
-export default Store
+export default Store;
