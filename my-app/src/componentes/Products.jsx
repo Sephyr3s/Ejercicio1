@@ -1,6 +1,8 @@
 import React, { useContext, useState, useEffect } from "react";
 import Productitem from "./Productitem";
+
 import { GlobalContext } from '../context/GlobalContext';
+
 
 const Products = () => {
 
@@ -20,8 +22,8 @@ const Products = () => {
   }, [products, productsFilter])
   
   useEffect(() => {
-    setProductsToList(products)      
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    setProductsToList(products)  
+    // eslint-disable-next-line react-hooks/exhaustive-deps    
   }, [])
 
   function mostrarResultadoDeBusqueda() {
@@ -46,23 +48,18 @@ const Products = () => {
         </div>
         <div className="col-md-4">
           <form className="">
-            <input
-              className="form-control me-sm-2"
-              type="text"
-              placeholder="Search"
-              onChange={handleChange}
-              value={match}
+            <input  className="form-control me-sm-2"  type="text"  placeholder="Search"  onChange={handleChange}  value={match}
             />
           </form>
         </div>
       </div>
+
       <div className="row px-3">
-        {productsToList.map((p, i) => (
-          <div key={i} className="col-md-4">
-              <Productitem functionalButtons={true} product={p} />
-          </div>
-        ))}
-        </div>
+          {productsToList.map((c,i)=>(
+            <div   key={i} className="col-md-4">
+            <Productitem functionalButtons={true} product={c}/>
+            </div> ))}
+      </div>
     </>
   );
 };

@@ -5,9 +5,9 @@ import { appReducer } from "./appReducer";
 
 const initialState = {
   products: productList,
- productsFilter: productList,
+  productsFilter: productList,
   productName: "Nombre",
-  price: 0,
+  precio: 0,
   productEdit: {},
   carrito: [],
   totalPagar: 0,
@@ -19,13 +19,13 @@ export const GlobalContext = createContext(initialState);
 export const ContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(appReducer, initialState);
 
-  const changeProductName = (nombre) => {
-    dispatch({ type: "CHANGE_NAME", payload: { nombre } });
+  const changeProductName = (productName) => {
+    dispatch({ type: "CHANGE_NAME", payload: { productName } });
   };
 
   const changePrice = (precio) => {
     dispatch({ type: "CHANGE_PRICE", payload: { precio } });
-  }; 
+  };
 
   const addProduct = (product) => {
     dispatch({ type: "ADD_PRODUCT", payload: { product } });
@@ -56,6 +56,7 @@ export const ContextProvider = ({ children }) => {
   const deleteProductToCarrito = (productId) => {
     dispatch({ type: "DELETE_PRODUCT_TO_CARRITO", payload: { productId } });
   };
+
   const updateProductList = (match) => {
     dispatch({ type: "UPDATE_PRODUCT_LIST", payload: { match }})
   }

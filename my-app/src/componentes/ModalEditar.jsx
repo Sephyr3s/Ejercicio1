@@ -1,33 +1,29 @@
 import React, { useContext, useEffect, useState } from "react"
 import ProductForm from "./ProductForm";
 import Productitem from "./Productitem";
+
 import { GlobalContext } from '../context/GlobalContext'
 
 const ModalEditar = () => {
 
-  const { price, productName, image, updateProduct, productEdit } = useContext(GlobalContext);
+  const { precio, productName, updateProductList, productEdit } = useContext(GlobalContext);
 
-  const [product, setProduct] = useState({name: "", price: 0, image: ""})
+  const [product, setProduct] = useState({nombre: "", precio: 0})
   useEffect(() => {
     // eslint-disable-next-line no-useless-computed-key
-    setProduct({...product, ["name"]: productName})
+    setProduct({...product, ["nombre"]: productName})
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [productName])
   useEffect(() => {
     // eslint-disable-next-line no-useless-computed-key
-    setProduct({...product, ["price"]: price})
+    setProduct({...product, ["precio"]: precio})
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [price])
-  useEffect(() => {
-    // eslint-disable-next-line no-useless-computed-key
-    setProduct({...product, ["image"]: image})
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [image])
+  }, [precio])
 
   useEffect(() => {
-    setProduct({name: productName, price: price, image: image})
+    setProduct({nombre: productName, precio: precio})
     console.log(product);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [productEdit])
 
   return (
@@ -53,7 +49,7 @@ const ModalEditar = () => {
             </div>
           </div>
           <div className="modal-footer">
-            <button onClick={() => {updateProduct()}} data-dismiss="modal" type="button" className="btn btn-info" style={{width: '100%'}}>
+            <button onClick={() => {updateProductList()}} data-dismiss="modal" type="button" className="btn btn-info" style={{width: '100%'}}>
               Guardar cambios
             </button>
           </div>

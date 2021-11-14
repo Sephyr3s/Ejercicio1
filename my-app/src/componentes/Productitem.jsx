@@ -1,16 +1,17 @@
-import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import React, { useState, useEffect, useContext } from "react";
+
 import { GlobalContext } from '../context/GlobalContext'
 
-const Productitem = ({product,functionalButtons}) => {  
+const Productitem = ({product, functionalButtons}) => {  
     const { carrito, addProductToCarrito, updateQuantityProductInCarrito } = useContext(GlobalContext)
     const [activeButtons, setActiveButtons] = useState("")
 
     useEffect(() => {
         functionalButtons ? setActiveButtons("button-enable") : setActiveButtons("button-disable")
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     
-    const AddedToCart = () => {
+    const  wasAddedToCart = () => {
         return carrito.find(p => p.id === product.id) != null ? false : true
     }
 
@@ -27,18 +28,19 @@ const Productitem = ({product,functionalButtons}) => {
 
     return (
        <div className="card">
-     <div className="Container h-25 d-inline-block border">  </div>
-        <div className="card-header">{product.nombre}</div>
+         <div className="Container h-25 d-inline-block border">  </div>
+            <div className="modal-header pb-0 border-0"> 
+                 <p>{product || "Nombre"}</p> 
+             </div>
             <div className="card-body">
-            <h2 className="modal-title">$ {product.precio}</h2>
-            <div className="modal-footer border-0"> 
-           <ButtonGroup> 
-               {AddedToCart() ? 
-                <button type="button" class="btn btn-dark border"onClick={handleClick} id="add" name={activeButtons} >  Add to car</button>
+                 <h2 className="modal-title">$ {product.precio || "0000"}</h2>
+                <div className="modal-footer border-0"> 
+
+               { wasAddedToCart() ? 
+                <button style={{ border: '3px solid black'}}  onClick={handleClick} type="button" id="add" name={activeButtons} className="btn btn-secondary">  Add to car</button>
                 :
-                <button type="button" className="btn btn-Light border"onClick={handleClick} id="increment" name={activeButtons} >  Add more </button>
-                } 
-                </ButtonGroup>
+                <button style={{ border: '3px dotted black'}} onClick={handleClick} type="button" id="increment" name={activeButtons} className="btn btn-secondary">  Add more</button> 
+               }
                </div> 
             </div>
                 
