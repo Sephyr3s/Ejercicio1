@@ -4,7 +4,7 @@ export const getTotalItems = (carrito) => {
 }
 
 export const getTotalPagar = (carrito) => {
-    return carrito.reduce((total, product) => total + product.price * product.quantity, 0);
+    return carrito.reduce((total, product) => total + product.precio * product.quantity, 0);
 }
 
 export function appReducer(state, action) {

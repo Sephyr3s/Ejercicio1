@@ -15,7 +15,7 @@ const Header =() => {
           </li>
           <li className="nav-item">
            {totalItems !== 0 ? (<Link className="nav-link" to="/Cart"> <img alt="carrito" src="https://img.icons8.com/material-rounded/24/000000/shopping-cart.png"/> Cart ({ totalItems })*</Link>)
-           : (<Link className="nav-link" to="/cart"> <img alt="carrito" src="https://img.icons8.com/material-rounded/24/000000/shopping-cart.png"/> Cart ({ totalItems })</Link>)}          </li>
+           : (<Link className="nav-link" to="/Cart"> <img alt="carrito" src="https://img.icons8.com/material-rounded/24/000000/shopping-cart.png"/> Cart ({ totalItems })</Link>)}          </li>
          
           <li className="nav-item">
            <Link className="nav-link" to="/Pages/vistaProductos">Administrar productos </Link>

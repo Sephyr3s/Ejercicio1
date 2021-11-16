@@ -5,7 +5,7 @@ import { GlobalContext } from "../context/GlobalContext";
 import HeaderTest from "../componentes/headerTest";
 
 const AddProduct = () => {
-  const { changeProductName, changePrice, price, productName,  } = useContext(GlobalContext);
+  const { changeProductName, changePrice, precio, productName  } = useContext(GlobalContext);
 
   const [product, setProduct] = useState({nombre: "", precio: 0})
   useEffect(() => {
@@ -15,9 +15,9 @@ const AddProduct = () => {
   }, [productName])
   useEffect(() => {
     // eslint-disable-next-line no-useless-computed-key
-    setProduct({...product, ["precio"]: price})
+    setProduct({...product, ["precio"]: precio})
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [price])
+  }, [precio])
 
   useEffect(() => {
     changeProductName("")

@@ -27,7 +27,7 @@ const Cart = () => {
                         </>
                     : 
                         <div className="w-100" >
-                            <Link to="/products" >
+                            <Link to="/Products" >
                                 <div >
                                     <p> No hay productos en el carro</p>
                                 </div>

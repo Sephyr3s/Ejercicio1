@@ -6,7 +6,7 @@ import { GlobalContext } from '../context/GlobalContext'
 
 const ModalEditar = () => {
 
-  const { precio, productName, updateProductList, productEdit } = useContext(GlobalContext);
+  const { precio, productName, updateProduct, productEdit } = useContext(GlobalContext);
 
   const [product, setProduct] = useState({nombre: "", precio: 0})
   useEffect(() => {
@@ -49,7 +49,7 @@ const ModalEditar = () => {
             </div>
           </div>
           <div className="modal-footer">
-            <button onClick={() => {updateProductList()}} data-dismiss="modal" type="button" className="btn btn-info" style={{width: '100%'}}>
+            <button onClick={() => {updateProduct()}} data-dismiss="modal" type="button" className="btn btn-info" style={{width: '100%'}}>
               Guardar cambios
             </button>
           </div>

@@ -16,6 +16,7 @@ const ProductsCart = () => {
             style={{ marginRight: 10 }}
           >
             <img
+              src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/000000/external-delete-multimedia-kiranshastry-solid-kiranshastry.png"
               width="25"
               height="25"
               alt="delete"
@@ -103,22 +104,12 @@ const ProductsCart = () => {
                     textOverflow: "ellipsis",
                   }}
                 >
-                  {p.name}
+                  {p.nombre}
                 </p>
               </td>
-              <td>
-                <img
-                  src={
-                    p.image ||
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-Sgaglb-AfOqGPKS8iW0qSUk99iflqqneNw&usqp=CAU"
-                  }
-                  height="100%"
-                  width="40"
-                  alt="img"
-                />
-              </td>
+            
               <td style={{ fontSize: "1.3rem", paddingTop: "1.3rem" }}>
-                $ {p.price}{" "}
+                $ {p.precio}{" "}
               </td>
               <td style={{ fontSize: "1.3rem" }}>
                 {printButtons(p.quantity, p.id)}

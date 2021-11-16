@@ -3,6 +3,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { GlobalContext } from '../context/GlobalContext'
 
 const Productitem = ({product, functionalButtons}) => {  
+    
     const { carrito, addProductToCarrito, updateQuantityProductInCarrito } = useContext(GlobalContext)
     const [activeButtons, setActiveButtons] = useState("")
 
@@ -30,16 +31,16 @@ const Productitem = ({product, functionalButtons}) => {
        <div className="card">
          <div className="Container h-25 d-inline-block border">  </div>
             <div className="modal-header pb-0 border-0"> 
-                 <p>{product || "Nombre"}</p> 
+                 <p>{product.nombre || "Nombre"}</p> 
              </div>
             <div className="card-body">
                  <h2 className="modal-title">$ {product.precio || "0000"}</h2>
                 <div className="modal-footer border-0"> 
 
                { wasAddedToCart() ? 
-                <button style={{ border: '3px solid black'}}  onClick={handleClick} type="button" id="add" name={activeButtons} className="btn btn-secondary">  Add to car</button>
+                <button style={{ border: '3px solid black'}}  onClick={handleClick} type="button" id="add" name={activeButtons} className="btn btn-secondary"> <img src="https://img.icons8.com/windows/32/000000/shopping-cart.png" alt="carrito" /> Add to car</button>
                 :
-                <button style={{ border: '3px dotted black'}} onClick={handleClick} type="button" id="increment" name={activeButtons} className="btn btn-secondary">  Add more</button> 
+                <button style={{ border: '3px dotted black'}} onClick={handleClick} type="button" id="increment" name={activeButtons} className="btn btn-secondary"> <img src="https://img.icons8.com/material-rounded/24/000000/add-shopping-cart.png" alt="carrito" /> Add more</button>
                }
                </div> 
             </div>

@@ -4,7 +4,7 @@ import { GlobalContext } from "../context/globalContext";
 
 const costProduct=()=> {
 
-  const { totalPagar, totalItems } = useContext(GlobalContext);
+const { totalPagar, totalItems } = useContext(GlobalContext);
 
 
     return (

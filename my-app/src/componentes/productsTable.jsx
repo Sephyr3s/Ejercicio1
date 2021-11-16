@@ -6,7 +6,8 @@ import ModalEditar from './ModalEditar.jsx'
 
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { productList } from "../utils/productList"
+
+
 const ProductsTable = () => {
   const { products, deleteProduct, setProductEdit } = useContext(GlobalContext);
 
@@ -40,13 +41,13 @@ const ProductsTable = () => {
           </tr>
         </thead>
         <tbody>
-          {productList.map((p) => (
+          {products.map((p) => (
             <tr key={p.id}>
               <th scope="row">{p.id}</th>
-              <td>{p.nombre || "Nombre de prueba"}</td>
+              <td>{p.nombre || "Nombre"}</td>
               <td>$ {p.precio}</td>
               <td>
-                <button onClick={() => setProductEdit(p)} name="editar" data-toggle="modal" data-target="#myModal" type="button" className="btn btn-Light btn-sm m-1">
+                <button onClick={() => setProductEdit(p)} nombre="editar" data-toggle="modal" data-target="#myModal" type="button" className="btn btn-Light btn-sm m-1">
                   Editar
                 </button>
                 <button onClick={() => {
@@ -60,7 +61,7 @@ const ProductsTable = () => {
                     draggable: true,
                     progress: undefined,
                     });
-                }} name="eliminar" type="button" className="btn btn-danger btn-sm m-1">
+                }} nombre="eliminar" type="button" className="btn btn-danger btn-sm m-1">
                   Eliminar
                 </button>
                 <ToastContainer/>
