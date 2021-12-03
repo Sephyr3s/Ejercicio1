@@ -17,17 +17,18 @@ import { ContextProvider } from './context/GlobalContext'
 function App() {
   return (   
     <ContextProvider>
-    <Router>
-      <Switch>
-        <Redirect exact from="/" to="/Products" />
-        <Route path="/Products" component={Store} />
-        <Route path="/About" component={About} />
-        <Route path="/Cart" component={Cart} />
-        <Route path="/vistaProductos" component={vistaProductos} />
-        <Route path="/Add-product" component={AddProduct} />
-        <Route component={NotFound} />  
-      </Switch>
-    </Router>
+     
+      <Router>
+        <Switch>
+          <Redirect exact from="/" to="/Products" />
+          <Route path="/Products" component={Store} />
+          <Route path="/About" component={About} />
+          <Route path="/Cart" component={Cart} />
+          <Route path="/vistaProductos" component={vistaProductos} />
+          <Route path="/addproducts" component={AddProduct} />
+          <Route component={NotFound} />  
+        </Switch>
+      </Router> 
   </ContextProvider>
  
   );

@@ -58,11 +58,12 @@ const ProductForm = ({ type }) => {
            />
           <span className="input-group-text">.00</span>
         </div>
-
       </div>
-      {type === "crear" && <Link to="vista-productos">
+      
+      {type === "crear" && <Link to="vistaProductos">
         <button onClick={handleClick} className="btn btn-info mb-3"style={{ width: "100%" }} > Añadir producto </button>
-      </Link>}
+      </Link>
+      }
     </form>
   );
 };

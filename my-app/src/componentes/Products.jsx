@@ -41,8 +41,8 @@ const Products = () => {
   }
 
   return (
-    <>
-      <div className="row justify-content-between">
+    <div >
+      <div className="row justify-content-between  " >
         <div className="col-md-4">
           {mostrarResultadoDeBusqueda()}
         </div>
@@ -54,13 +54,13 @@ const Products = () => {
         </div>
       </div>
 
-      <div className="row px-3">
+      <div className="row px-3" style={{paddingBottom: "10 px"}}>
           {productsToList.map((c,i)=>(
             <div   key={i} className="col-md-4">
             <Productitem functionalButtons={true} product={c}/>
             </div> ))}
       </div>
-    </>
+    </div>
   );
 };
 

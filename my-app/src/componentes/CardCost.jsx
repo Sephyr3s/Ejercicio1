@@ -8,10 +8,10 @@ const CardCost = () => {
   const { totalPagar, totalItems } = useContext(GlobalContext);
 
     const handleClick = () => {
-      toast.success('Gracias por su compra...!', {
-        position: "top-center",
+      toast('💵Gracias por su compra!', {
+        position: "bottom-center",
         autoClose: 1500,
-        hideProgressBar: true,
+        hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
@@ -21,18 +21,18 @@ const CardCost = () => {
 
     return (
         <div className="col-md-4" style={{ minHeight: '65vh'}} >
-            <div className="card text-white bg-primary mb-3" style={{maxWidth: '20rem'}}>
-            <h3 className="card-header pt-4">Check out</h3>
+            <div className="card text-white bg-black text-center mb-3" style={{maxWidth: '20rem'}}>
+            <h3 className="card-header pt-4 "style={{color: "deeppink"}}>Pay up</h3>
             <div className="card-body pt-4">
-                <h5 className="card-title">Cantidad de productos</h5>
-                <p style={{ fontSize: '2rem' }} className="card-text">{ totalItems }</p>
+                <h5 className="card-title " style={{color: "Violet"}}>Cantidad de productos</h5>
+                <p style={{ fontSize: '1.5  rem',color:"silver "}} className="card-text">{ totalItems }</p>
                 <span aria-hidden="true"></span>
-                <h5 className="card-title">Total a pagar</h5>
-                <p style={{ fontSize: '2rem' }} className="card-text">$ { totalPagar }</p>
+                <h5 className="card-title "style={{ fontSize: '1.5rem',color:"darkviolet"}}>Total a pagar</h5>
+                <p style={{ fontSize: '1.5rem',color:"tomato "}} className="card-text">$ { totalPagar }</p>
             </div>
             <div className="card-footer">
-                  <button onClick={handleClick} data-dismiss="modal" type="button" className="btn btn-success" style={{width: '100%', marginBottom: 10}}>
-                    Finalizar compra
+                  <button onClick={handleClick} data-dismiss="modal" type="button " className="btn btn-outline-warning rounded-pill" style={{width: '40%', marginBottom: 10}}>
+                    Comprar
                   </button>
                 <ToastContainer/>
             </div>

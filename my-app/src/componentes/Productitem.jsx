@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
+import {BsCart4} from "react-icons/bs";
+import {BsCartPlus} from "react-icons/bs";
 
 import { GlobalContext } from '../context/GlobalContext'
 
@@ -28,19 +30,19 @@ const Productitem = ({product, functionalButtons}) => {
     }
 
     return (
-       <div className="card">
-         <div className="Container h-25 d-inline-block border">  </div>
-            <div className="modal-header pb-0 border-0"> 
+       <div className="card card border-dark  bg-white">
+         <div className="Container h-25 d-inline-block border" >  </div>
+            <div className="card-header pb-0 "class="text-warning"> 
                  <p>{product.nombre || "Nombre"}</p> 
              </div>
-            <div className="card-body">
-                 <h2 className="modal-title">$ {product.precio || "0000"}</h2>
+            <div className="card-body" >
+                 <h2 className="modal-title text-black" >$ {product.precio || "0000"}</h2>
                 <div className="modal-footer border-0"> 
-
+                <div className="btn btn-outline-dark text-black p-1"> details</div>
                { wasAddedToCart() ? 
-                <button style={{ border: '3px solid black'}}  onClick={handleClick} type="button" id="add" name={activeButtons} className="btn btn-secondary"> <img src="https://img.icons8.com/windows/32/000000/shopping-cart.png" alt="carrito" /> Add to car</button>
+                <button style={{ border: '1px solid white'}}  onClick={handleClick} type="button" id="add" name={activeButtons} className="btn btn-dark"> <BsCart4/> Add to car</button>
                 :
-                <button style={{ border: '3px dotted black'}} onClick={handleClick} type="button" id="increment" name={activeButtons} className="btn btn-secondary"> <img src="https://img.icons8.com/material-rounded/24/000000/add-shopping-cart.png" alt="carrito" /> Add more</button>
+                <button style={{ border: '1px solid white'}} onClick={handleClick} type="button" id="increment" name={activeButtons} className="btn btn-warning"> <BsCartPlus/> Add more</button>
                }
                </div> 
             </div>

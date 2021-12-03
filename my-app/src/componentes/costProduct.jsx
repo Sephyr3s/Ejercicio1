@@ -9,11 +9,11 @@ const { totalPagar, totalItems } = useContext(GlobalContext);
 
     return (
         <div className="col-md-4" style={{ minHeight: '65vh'}} >
-            <div className="card text-white bg-primary mb-3" style={{maxWidth: '20rem'}}>
+            <div className="card text-white bg-dark mb-3" style={{maxWidth: '20rem'}}>
             <h3 className="card-header pt-4">Check out</h3>
-            <div className="card-body pt-4">
+            <div className="card-body  pt-4 ">
                 <h5 className="card-title">Total products</h5>
-                <p style={{ fontSize: '2rem' }} className="card-text">{ totalItems }</p>
+                <p style={{ fontSize: '2rem' }} className="card-texts">{ totalItems }</p>
                 <span aria-hidden="true"></span>
                 <h5 className="card-title">Total to pay</h5>
                 <p style={{ fontSize: '2rem' }} className="card-text">$ { totalPagar }</p>

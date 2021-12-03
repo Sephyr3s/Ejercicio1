@@ -18,13 +18,14 @@ const ProductsTable = () => {
         <div className="col-3 p-0"> {products.length} Productos en inventario</div>
         <div className="col-3 p-0">
           <Link to="/addProducts">
-            <button type="button" class="btn btn-success">
-              Agregar producto
+            <button type="button" class="btn btn-outline-info">
+              Agregar producto 
               <VscAdd />
             </button>
           </Link>
         </div>
       </div>
+
       <table class="table table-hover table-bordered table-sm w-100">
         <thead
           style={{
@@ -47,12 +48,12 @@ const ProductsTable = () => {
               <td>{p.nombre || "Nombre"}</td>
               <td>$ {p.precio}</td>
               <td>
-                <button onClick={() => setProductEdit(p)} nombre="editar" data-toggle="modal" data-target="#myModal" type="button" className="btn btn-Light btn-sm m-1">
+                <button onClick={() => setProductEdit(p)} nombre="editar" data-toggle="modal" data-target="#myModal" type="button" className="btn btn-outline-warning btn-sm m-1">
                   Editar
                 </button>
                 <button onClick={() => {
                   deleteProduct(p.id)
-                  toast.error(`El producto con id <${p.id}> fue eliminado`, {
+                  toast.error(`El producto <${p.nombre}> fue eliminado`, {
                     position: "bottom-center",
                     autoClose: 1500,
                     hideProgressBar: true,
@@ -61,7 +62,7 @@ const ProductsTable = () => {
                     draggable: true,
                     progress: undefined,
                     });
-                }} nombre="eliminar" type="button" className="btn btn-danger btn-sm m-1">
+                }} nombre="eliminar" type="button" className="btn btn-outline-danger btn-sm m-1">
                   Eliminar
                 </button>
                 <ToastContainer/>

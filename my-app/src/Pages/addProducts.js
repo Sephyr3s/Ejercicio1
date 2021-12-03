@@ -4,6 +4,7 @@ import Productitem from "../componentes/Productitem";
 import { GlobalContext } from "../context/GlobalContext";
 import HeaderTest from "../componentes/headerTest";
 
+
 const AddProduct = () => {
   const { changeProductName, changePrice, precio, productName  } = useContext(GlobalContext);
 

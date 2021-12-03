@@ -14,29 +14,34 @@ const Cart = () => {
     return (
         <>
             <Header />
-            <div className="container" >
-                <div className="row text-center" style={{ paddingTop: '4rem' }} >
-                    <h1 style={{fontSize: 35}}>SHOPPING CART</h1>
-                    <p style={{fontSize: 15}} >This is your shopping cart</p>
-                </div>
-                <div className="row pt-3" >
-                    {totalItems !== 0 ? 
-                        <>
-                            <ProductCart/>
-                            <CardCost/>
-                        </>
-                    : 
-                        <div className="w-100" >
-                            <Link to="/Products" >
-                                <div >
-                                    <p> No hay productos en el carro</p>
-                                </div>
-                            </Link>
-                            <p className="text-center" style={{ fontSize: '1.5rem'}}>Empty car!</p>
-                        </div>
-                    }
-                </div>
-            </div>
+           
+                <div className="container bgimage" >
+                    <div className="row text-center" style={{ paddingTop: '4rem' }} >
+                        <h1 style={{fontSize: 35}}>Shopping Car </h1>
+                        <p style={{fontSize: 15}} >This is your shopping car</p>
+                    </div>
+                    <div className="row pt-3" >
+                        {totalItems !== 0 ? 
+                            <>
+                                <ProductCart/>
+                                <CardCost/>
+                            </>
+                        : 
+                            <div className="w-100 text-center" >
+                                <button className="btn btn-outline-light rounded-pill  p-1">
+                                <Link class=" text-dark" to="/Products" >
+                                    <div >
+                                        <p>proceed to shop</p>
+                                    </div>
+                                </Link>
+                                </button>
+                                <p className="text-center" style={{ PaddingTop:"30 px", fontSize: '2rem'}}>Empty car!</p>
+                                
+                            </div>
+                        }
+                      </div>
+                     </div>
+               
         </>
     )
 }
